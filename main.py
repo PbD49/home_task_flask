@@ -1,16 +1,12 @@
 from flask import Flask
 from swagger_docs_api.config import swagger_bp
-from website.blueprint.delete_bp import delete_bp
-from website.blueprint.get_all_bp import get_bp
-from website.blueprint.get_by_id_bp import get_by_id_bp
-from website.blueprint.post_bp import post_bp
-from website.blueprint.put_bp import update_bp
+from website.router_bp import crud_bp
 
 
 app = Flask(__name__)
 
 
-blueprints = [get_bp, post_bp, update_bp, get_by_id_bp, delete_bp, swagger_bp]
+blueprints = [crud_bp, swagger_bp]
 
 
 for blueprint in blueprints:
