@@ -1,7 +1,7 @@
 from flask_restx import Resource
 from http import HTTPStatus
 from swagger_docs_api.schemas.objects_classes import namespace, create_schema
-from core.base_crud import post
+from core.base_crud import create_record
 
 
 @namespace.route('/<int:owner_id>')
@@ -12,4 +12,4 @@ class CreateRecord(Resource):
     @namespace.marshal_with(create_schema, code=HTTPStatus.CREATED)
     def post(self, owner_id):
         '''Создание записи'''
-        return post(owner_id)
+        return create_record(owner_id)

@@ -1,6 +1,6 @@
 from flask_restx import Resource
 from swagger_docs_api.schemas.objects_classes import namespace, delete_schema, model_get_by_id, update_schema
-from core.base_crud import put, delete, get_by_id
+from core.base_crud import edit_record_id, delete_records, get_by_id
 
 
 @namespace.route('/<int:record_id>')
@@ -20,7 +20,7 @@ class GettingRecord(Resource):
     @namespace.marshal_with(delete_schema)
     def delete(self, record_id):
         '''Удаление записи'''
-        return delete(record_id)
+        return delete_records(record_id)
 
     @namespace.response(400, 'Entity with the given name already exists')
     @namespace.response(404, 'Entity not found')
@@ -29,4 +29,4 @@ class GettingRecord(Resource):
     @namespace.marshal_with(update_schema)
     def put(self, record_id):
         '''Обновление записи'''
-        return put(record_id)
+        return edit_record_id(record_id)

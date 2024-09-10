@@ -2,7 +2,7 @@ from db.postgres_db.queries_db import get_records_all, create_records, edit_reco
 from flask import request
 
 
-def get():
+def list_records():
     '''Получение всех записей'''
     entities = [
         {
@@ -20,13 +20,13 @@ def get():
     }
 
 
-def post(owner_id):
+def create_record(owner_id):
     '''Создание записи'''
     data = request.get_json()
     return create_records(data, owner_id), 201
 
 
-def put(record_id):
+def edit_record(record_id):
     '''Обновление'''
     data = request.get_json()
     entity = edit_record_id(record_id, data)
@@ -43,7 +43,7 @@ def put(record_id):
         return
 
 
-def delete(record_id):
+def delete_records(record_id):
     '''Удаление'''
     delete = delete_record(record_id)
     return delete, 204

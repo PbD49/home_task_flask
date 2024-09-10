@@ -1,6 +1,6 @@
 from flask_restx import Resource
 from swagger_docs_api.schemas.objects_classes import namespace, model_group
-from core.base_crud import get
+from core.base_crud import list_records
 
 
 @namespace.route('/get_records')
@@ -10,4 +10,4 @@ class GettingAllRecords(Resource):
     @namespace.marshal_list_with(model_group)
     def get(self):
         '''Получение всех записей'''
-        return get()
+        return list_records()

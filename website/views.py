@@ -1,5 +1,5 @@
 from flask.views import MethodView
-from core.base_crud import get, post, put, delete, get_by_id
+from core.base_crud import list_records, create_record, edit_record_id, delete_records, get_by_id
 
 
 class BlogApiView(MethodView):
@@ -8,16 +8,16 @@ class BlogApiView(MethodView):
         if record_id:
             return get_by_id(record_id)
         else:
-            return get()
+            return list_records()
 
     def post(self, owner_id):
         '''Создание записи'''
-        return post(owner_id)
+        return create_record(owner_id)
 
     def put(self, record_id):
         '''Обновление'''
-        return put(record_id)
+        return edit_record_id(record_id)
 
     def delete(self, record_id):
         '''Удаление'''
-        return delete(record_id)
+        return delete_records(record_id)
