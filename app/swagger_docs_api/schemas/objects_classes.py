@@ -1,7 +1,7 @@
-from swagger_docs_api.schemas.base_class import BaseSchema, namespace
-from swagger_docs_api.schemas.get_by_id_class import GetByIdSchema
-from swagger_docs_api.schemas.create_update_delete_class import CreateAndUpdateDeleteSchema
-from swagger_docs_api.schemas.create_owners_class import CreateOwnersSchema
+from app.swagger_docs_api.schemas.base_class import BaseSchema, namespace
+from app.swagger_docs_api.schemas.get_by_id_class import GetByIdSchema
+from app.swagger_docs_api.schemas.create_update_delete_class import CreateAndUpdateDeleteSchema
+from app.swagger_docs_api.schemas.create_owners_class import CreateOwnersSchema
 
 base_schema = BaseSchema(namespace)
 get_by_id_schema = GetByIdSchema(namespace)

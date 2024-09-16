@@ -1,5 +1,5 @@
 from flask_restx import fields
-from swagger_docs_api.schemas.base_class import BaseSchema
+from app.swagger_docs_api.schemas.base_class import BaseSchema
 
 
 class CreateOwnersSchema(BaseSchema):

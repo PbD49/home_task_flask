@@ -1,8 +1,8 @@
 from flask import request
 from flask_restx import Resource
-from db.postgres_db.queries_db import save_user
-from db.postgres_db.model import Owners
-from swagger_docs_api.schemas.objects_classes import namespace,  create_owners
+from app.db.postgres_db.model import Owners
+from app.db.postgres_db.queries_db import save_user
+from app.swagger_docs_api.schemas.objects_classes import namespace,  create_owners
 
 
 @namespace.route('/create_owner')

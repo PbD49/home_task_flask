@@ -1,6 +1,6 @@
 from flask_restx import Resource
-from swagger_docs_api.schemas.objects_classes import namespace, model_group
-from core.base_crud import list_records
+from app.swagger_docs_api.schemas.objects_classes import namespace, model_group
+from app.core.base_crud import list_records
 
 
 @namespace.route('/get_records')

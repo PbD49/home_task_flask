@@ -1,4 +1,4 @@
-from db.postgres_db.queries_db import get_records_all, create_records, edit_record_id, delete_record, get_record_id
+from app.db.postgres_db.queries_db import get_records_all, create_records, edit_record_id, delete_record, get_record_id
 from flask import request
 
 

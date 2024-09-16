@@ -1,6 +1,6 @@
 from flask_restx import Resource
-from swagger_docs_api.schemas.objects_classes import namespace, delete_schema, model_get_by_id, update_schema
-from core.base_crud import edit_record_id, delete_records, get_by_id
+from app.swagger_docs_api.schemas.objects_classes import namespace, delete_schema, model_get_by_id, update_schema
+from app.core.base_crud import edit_record_id, delete_records, get_by_id
 
 
 @namespace.route('/<int:record_id>')

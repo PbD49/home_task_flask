@@ -1,5 +1,5 @@
 from flask.views import MethodView
-from core.base_crud import list_records, create_record, edit_record_id, delete_records, get_by_id
+from app.core.base_crud import list_records, create_record, edit_record_id, delete_records, get_by_id
 
 
 class BlogApiView(MethodView):

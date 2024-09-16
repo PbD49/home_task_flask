@@ -1,6 +1,8 @@
 from flask import Flask
-from swagger_docs_api.config import swagger_bp
-from website.router_bp import crud_bp
+
+from app.db.postgres_db.engine_postgres import create_tables
+from app.swagger_docs_api.config import swagger_bp
+from app.website.router_bp import crud_bp
 
 
 app = Flask(__name__)
@@ -18,4 +20,5 @@ app.config['JSON_SORT_KEYS'] = False
 
 
 if __name__ == '__main__':
-    app.run(threaded=True, debug=True)
+    create_tables()
+    app.run(host='0.0.0.0', port=5000, threaded=True, debug=True)

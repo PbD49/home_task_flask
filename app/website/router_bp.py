@@ -1,5 +1,5 @@
 from flask import Blueprint
-from website.views import BlogApiView
+from app.website.views import BlogApiView
 
 
 crud_bp = Blueprint('crud_bp', __name__, url_prefix='/api/v1')

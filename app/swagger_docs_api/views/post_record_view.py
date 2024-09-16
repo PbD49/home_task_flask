@@ -1,7 +1,7 @@
 from flask_restx import Resource
 from http import HTTPStatus
-from swagger_docs_api.schemas.objects_classes import namespace, create_schema
-from core.base_crud import create_record
+from app.swagger_docs_api.schemas.objects_classes import namespace, create_schema
+from app.core.base_crud import create_record
 
 
 @namespace.route('/<int:owner_id>')

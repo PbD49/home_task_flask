@@ -1,9 +1,9 @@
 import time
 from datetime import datetime
 from sqlalchemy.orm import joinedload, declarative_base
-from db.postgres_db.engine_postgres import session
-from db.redis_db.redis_db import RedisDB
-from db.postgres_db.model import Owners, Website
+from app.db.postgres_db.engine_postgres import session
+from app.db.redis_db.redis_db import RedisDB
+from app.db.postgres_db.model import Owners, Website
 
 Base = declarative_base()
 
