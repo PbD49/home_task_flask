@@ -2,8 +2,8 @@ import os
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
-from app.db.postgres_db.model import Base
 
+from app.db.postgres_db.model import Base
 
 load_dotenv()
 
@@ -15,7 +15,7 @@ POSTGRES_DB = os.getenv("POSTGRES_DB")
 
 DSN = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
 engine = sqlalchemy.create_engine(DSN)
-print(DSN)
+# print(DSN)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 session = SessionLocal()
@@ -28,4 +28,4 @@ def create_tables():
     Base.metadata.create_all(engine)
 
 
-# create_tables()
+create_tables()
